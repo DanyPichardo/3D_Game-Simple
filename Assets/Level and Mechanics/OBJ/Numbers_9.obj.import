@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://y1qi51oak7gp"
+path="res://.godot/imported/Numbers_9.obj-e1cf2d1594c0979468a342862ce96580.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Numbers_9.obj-e1cf2d1594c0979468a342862ce96580.mesh"]
+
+source_file="res://Assets/Level and Mechanics/OBJ/Numbers_9.obj"
+dest_files=["res://.godot/imported/Numbers_9.obj-e1cf2d1594c0979468a342862ce96580.mesh", "res://.godot/imported/Numbers_9.obj-e1cf2d1594c0979468a342862ce96580.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

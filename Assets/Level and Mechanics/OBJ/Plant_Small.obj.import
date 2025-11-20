@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c6ljice155s85"
+path="res://.godot/imported/Plant_Small.obj-cf2a0546fe4a02d5b8ef78cacbf8719d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Plant_Small.obj-cf2a0546fe4a02d5b8ef78cacbf8719d.mesh"]
+
+source_file="res://Assets/Level and Mechanics/OBJ/Plant_Small.obj"
+dest_files=["res://.godot/imported/Plant_Small.obj-cf2a0546fe4a02d5b8ef78cacbf8719d.mesh", "res://.godot/imported/Plant_Small.obj-cf2a0546fe4a02d5b8ef78cacbf8719d.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
