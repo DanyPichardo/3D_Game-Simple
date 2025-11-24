@@ -2,31 +2,39 @@ extends CharacterBody3D
 
 const SPEED := 5.5
 const JUMP_VELOCITY := 10.0
+var mouse_sens := 0.1
+var mouse_visible := false
 
-var cam = $CameraPivot
+@onready var cam = $CameraPivot
 
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
-#func _unhandled_input(event):
-	#if event is InputEventMouseMotion:
-		#rotation_degrees.y -= event.relative.x * 0.2
-		#$Camera3D.rotation_degrees.x -= event.relative.y * 0.2
-		#$Camera3D.rotation_degrees.x = clamp(
-			#$Camera3D.rotation_degrees.x, -80.0, 80.0
-		#)
-	#elif event.is_action_pressed("ui_cancel"):
-		#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
 func _physics_process(delta:float):
 	movimiento(delta)
 	move_and_slide()
+
+#Camera movement
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+			rotate_y(deg_to_rad(-event.relative.x * mouse_sens))
+			cam.rotate_x(deg_to_rad(-event.relative.y * mouse_sens))
+			cam.rotation.x = clamp(cam.rotation.x, deg_to_rad(-50), deg_to_rad(30))
+	elif event.is_action_pressed("ui_cancel"):
+		if mouse_visible == false:
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+			mouse_visible = true
+		elif mouse_visible == true:
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+			mouse_visible = false
 
 func movimiento(delta:float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
 	#Jump
+	velocity.y -= 10.0 * delta
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	elif Input.is_action_just_released("jump") and velocity.y > 0.0:
