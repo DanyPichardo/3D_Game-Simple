@@ -8,7 +8,7 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_v0iea"]
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_v0iea")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -19,13 +19,14 @@ shape = SubResource("CapsuleShape3D_f60y1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0680491, 0)
 mesh = SubResource("CapsuleMesh_v0iea")
 
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.15793687, 0, 0, 0, 0.2274766, 0, 0, 0, 1, 0, 0.3713101, -0.9492228)
+mesh = SubResource("BoxMesh_v0iea")
+skeleton = NodePath("../..")
+
 [node name="CameraPivot" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.92296183, 0.38489148, 0, -0.38489148, 0.92296183, 0, 2.7098064, 2.6291413)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot"]
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D"]
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.15793687, 0, 0, 0, 0.2274766, 0, 0, 0, 1, 0, 1.4393592, -0.9492228)
-mesh = SubResource("BoxMesh_v0iea")

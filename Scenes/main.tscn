@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bd15fp7hqg003"]
+[gd_scene load_steps=7 format=3 uid="uid://bd15fp7hqg003"]
 
 [ext_resource type="Material" uid="uid://rvmh7fyxq51" path="res://Assets/Materials/platform.tres" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://7qlj7k80q6cl" path="res://Scenes/player.tscn" id="1_jjgbg"]
 [ext_resource type="Material" uid="uid://22gmew6071n7" path="res://Assets/Materials/brigde.tres" id="2_jjvhh"]
 [ext_resource type="Material" uid="uid://dauxjsmrstx20" path="res://Assets/Materials/ground.tres" id="3_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://dkyexrc522rg2" path="res://Scenes/mob.tscn" id="5_kry3j"]
 
 [sub_resource type="Environment" id="Environment_jjgbg"]
 background_mode = 1
@@ -304,9 +305,13 @@ material = ExtResource("3_jjvhh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.76604444, 0.6427877, 0, -0.6427877, 0.76604444, 0, 16.8, 18)
+transform = Transform3D(0.85903513, -0.24889809, 0.4473345, 0.014719784, 0.8854913, 0.46442264, -0.5117047, -0.39237076, 0.76433194, 0, 26.699999, 18)
+shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_jjgbg")
+
+[node name="Enemy" parent="." instance=ExtResource("5_kry3j")]
+transform = Transform3D(5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, 5.9604645e-08, -67.6, 7.5000005, 0.6000004)
 
 [editable path="Player"]

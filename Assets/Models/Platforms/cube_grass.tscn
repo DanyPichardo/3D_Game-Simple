@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://1b14j70qts3i"]
-
-[ext_resource type="PackedScene" uid="uid://bhcyfq1uh58vb" path="res://Assets/Modular Platforms/Single Cube/glTF/Cube_Grass_Single.gltf" id="1_q3f7c"]
-
-[node name="Cube_Grass_Single2" instance=ExtResource("1_q3f7c")]

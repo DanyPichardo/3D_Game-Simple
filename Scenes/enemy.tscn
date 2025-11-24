@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkyexrc522rg2"]
-
-[ext_resource type="PackedScene" uid="uid://dn6kw8bo15wbu" path="res://Assets/Enemies/glTF/Bee.gltf" id="1_hghv2"]
-
-[node name="Enemy" type="RigidBody3D"]
-
-[node name="Bee2" parent="." instance=ExtResource("1_hghv2")]
