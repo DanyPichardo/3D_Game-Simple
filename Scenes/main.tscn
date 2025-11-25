@@ -304,6 +304,25 @@ material = ExtResource("3_jjvhh")
 [node name="Player" parent="." instance=ExtResource("1_jjgbg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 
+[node name="Skeleton3D" parent="Player/Character/CharacterArmature" index="0"]
+bones/2/position = Vector3(0.0021529857, 0.6648094, 0.15489031)
+bones/4/rotation = Quaternion(0.10024568, 4.3847794e-07, 3.2963747e-08, 0.99496275)
+bones/7/rotation = Quaternion(-0.024744064, -0.00027539092, 6.7978867e-06, 0.9996939)
+bones/9/rotation = Quaternion(-0.19909257, -0.016640617, -0.013826363, 0.97974193)
+bones/10/rotation = Quaternion(-0.5042156, -0.11002771, 0.18567301, 0.83617353)
+bones/12/rotation = Quaternion(-0.2037616, 0.018728483, 0.013450175, 0.97874904)
+bones/13/rotation = Quaternion(-0.5125434, 0.11187697, -0.18456453, 0.83109504)
+bones/14/position = Vector3(0.14694437, 0.14104483, 0.013161686)
+bones/14/rotation = Quaternion(-0.06491988, 0.07875502, -0.4101973, 0.90626776)
+bones/16/rotation = Quaternion(-0.042540785, 0.26359084, -0.335421, 0.90343946)
+bones/18/position = Vector3(-0.14566755, 0.14104481, 0.013161861)
+bones/18/rotation = Quaternion(-0.06491963, -0.07875448, 0.4101974, 0.9062678)
+bones/20/rotation = Quaternion(-0.042540804, -0.26359087, 0.33542106, 0.90343946)
+bones/22/rotation = Quaternion(0.95773435, 0.018099254, 0.003223434, 0.28706634)
+bones/23/rotation = Quaternion(0.50583833, 0.0075582205, 0.017352955, 0.8624207)
+bones/24/rotation = Quaternion(0.9577344, -0.018099163, -0.0032226956, 0.28706604)
+bones/25/rotation = Quaternion(0.50583786, -0.0075581265, -0.0173528, 0.8624209)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.85903513, -0.24889809, 0.4473345, 0.014719784, 0.8854913, 0.46442264, -0.5117047, -0.39237076, 0.76433194, 0, 26.699999, 18)
 shadow_enabled = true
@@ -315,3 +334,4 @@ environment = SubResource("Environment_jjgbg")
 transform = Transform3D(5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, 5.9604645e-08, -67.6, 7.5000005, 0.6000004)
 
 [editable path="Player"]
+[editable path="Player/Character"]
