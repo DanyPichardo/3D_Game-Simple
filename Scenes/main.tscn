@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bd15fp7hqg003"]
+[gd_scene load_steps=7 format=3 uid="uid://bd15fp7hqg003"]
 
 [ext_resource type="Material" uid="uid://rvmh7fyxq51" path="res://Assets/Materials/platform.tres" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://7qlj7k80q6cl" path="res://Scenes/player.tscn" id="1_jjgbg"]
 [ext_resource type="Material" uid="uid://22gmew6071n7" path="res://Assets/Materials/brigde.tres" id="2_jjvhh"]
 [ext_resource type="Material" uid="uid://dauxjsmrstx20" path="res://Assets/Materials/ground.tres" id="3_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://dbemje0d63buv" path="res://Scenes/collectible.tscn" id="5_kry3j"]
 
 [sub_resource type="Environment" id="Environment_jjgbg"]
 background_mode = 1
@@ -304,23 +305,23 @@ material = ExtResource("3_jjvhh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 
 [node name="Skeleton3D" parent="Player/Character/CharacterArmature" index="0"]
-bones/2/position = Vector3(0.0021529857, 0.6517288, 0.15489031)
-bones/4/rotation = Quaternion(0.11198872, 4.39063e-07, 2.7799366e-08, 0.9937095)
-bones/7/rotation = Quaternion(-0.03533716, -0.00027530317, 9.708102e-06, 0.99937546)
-bones/9/rotation = Quaternion(-0.19262594, -0.013752153, -0.0143461, 0.9810711)
-bones/10/rotation = Quaternion(-0.4938958, -0.10773634, 0.1870119, 0.84231013)
-bones/12/rotation = Quaternion(-0.19647859, 0.01547254, 0.014036681, 0.98028564)
-bones/13/rotation = Quaternion(-0.5011818, 0.10935404, -0.18607047, 0.83799535)
-bones/14/position = Vector3(0.1448206, 0.14105627, 0.013373749)
-bones/14/rotation = Quaternion(-0.060848635, 0.06963374, -0.4103351, 0.9072341)
-bones/16/rotation = Quaternion(-0.038123406, 0.2629924, -0.3171425, 0.9103858)
-bones/18/position = Vector3(-0.14354381, 0.14105634, 0.0133739235)
-bones/18/rotation = Quaternion(-0.060848378, -0.0696332, 0.4103352, 0.90723413)
-bones/20/rotation = Quaternion(-0.03812344, -0.26299244, 0.31714255, 0.91038585)
-bones/22/rotation = Quaternion(0.9497153, 0.01743462, 0.0039542234, 0.3126039)
-bones/23/rotation = Quaternion(0.5459171, 0.008367565, 0.016977502, 0.8376253)
-bones/24/rotation = Quaternion(0.94971544, -0.017434549, -0.003953482, 0.31260365)
-bones/25/rotation = Quaternion(0.5459168, -0.008367467, -0.016977346, 0.83762556)
+bones/2/position = Vector3(0.0021529857, 0.67235816, 0.15489031)
+bones/4/rotation = Quaternion(0.09346444, 4.2901655e-07, 1.3560064e-07, 0.99562263)
+bones/7/rotation = Quaternion(-0.018631024, -0.00027542745, 5.118471e-06, 0.99982643)
+bones/9/rotation = Quaternion(-0.2441778, -0.036885273, -0.01015894, 0.9689755)
+bones/10/rotation = Quaternion(-0.55350345, -0.12097563, 0.17873295, 0.8043963)
+bones/12/rotation = Quaternion(-0.24533834, 0.037408836, 0.010063589, 0.9686633)
+bones/13/rotation = Quaternion(-0.5467957, 0.11948522, -0.17973259, 0.8089709)
+bones/14/position = Vector3(0.14652102, 0.14104721, 0.013203954)
+bones/14/rotation = Quaternion(-0.06408797, 0.076890655, -0.41022894, 0.90647274)
+bones/16/rotation = Quaternion(-0.045080002, 0.2638876, -0.34589878, 0.8992692)
+bones/18/position = Vector3(-0.14524426, 0.14104721, 0.013204127)
+bones/18/rotation = Quaternion(-0.06408772, -0.0768901, 0.41022906, 0.90647274)
+bones/20/rotation = Quaternion(-0.045080006, -0.26388767, 0.34589875, 0.8992693)
+bones/22/rotation = Quaternion(0.9622932, 0.018457018, 0.0027948716, 0.27137312)
+bones/23/rotation = Quaternion(0.4806779, 0.007053059, 0.017564345, 0.87669295)
+bones/24/rotation = Quaternion(0.9622933, -0.018456915, -0.0027941372, 0.27137282)
+bones/25/rotation = Quaternion(0.48067755, -0.0070529683, -0.017564178, 0.87669325)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.85903513, -0.24889809, 0.4473345, 0.014719784, 0.8854913, 0.46442264, -0.5117047, -0.39237076, 0.76433194, 0, 26.699999, 18)
@@ -328,6 +329,12 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_jjgbg")
+
+[node name="Collectible" parent="." instance=ExtResource("5_kry3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.97946, 21.68359, 1.1521177)
+
+[node name="Collectible2" parent="." instance=ExtResource("5_kry3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.176504, 0.960094, -60.43538)
 
 [editable path="Player"]
 [editable path="Player/Character"]

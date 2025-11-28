@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b63bbsvvhi665"]
+
+[ext_resource type="PackedScene" uid="uid://dw5e61bnctn8b" path="res://Assets/Powerups and Pickups/glTF/Coin.gltf" id="1_pbss7"]
+
+[node name="Coin" instance=ExtResource("1_pbss7")]

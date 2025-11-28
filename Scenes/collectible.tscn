@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbemje0d63buv"]
+
+[ext_resource type="Script" uid="uid://ywlj0qu6ei5a" path="res://Scripts/collectible.gd" id="1_athsx"]
+[ext_resource type="PackedScene" uid="uid://b63bbsvvhi665" path="res://Assets/Models/coin.tscn" id="1_fwdfn"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_athsx"]
+height = 0.4333496
+radius = 0.89208984
+
+[node name="Collectible" type="Area3D" groups=["collectibles"]]
+collision_layer = 4
+script = ExtResource("1_athsx")
+
+[node name="Coin" parent="." instance=ExtResource("1_fwdfn")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -1.6006751e-11, 0.00036621094)
+shape = SubResource("CylinderShape3D_athsx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
