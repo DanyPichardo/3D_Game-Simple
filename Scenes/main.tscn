@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bd15fp7hqg003"]
+[gd_scene load_steps=8 format=3 uid="uid://bd15fp7hqg003"]
 
 [ext_resource type="Material" uid="uid://rvmh7fyxq51" path="res://Assets/Materials/platform.tres" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://7qlj7k80q6cl" path="res://Scenes/player.tscn" id="1_jjgbg"]
@@ -16,6 +16,9 @@ fog_enabled = true
 fog_light_color = Color(0.15570089, 0.39731148, 0.47471315, 1)
 fog_height = -1.4
 fog_height_density = 0.15
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_kry3j"]
+plane = Plane(0, 1, 0, -20)
 
 [node name="Main" type="Node3D"]
 
@@ -305,23 +308,23 @@ material = ExtResource("3_jjvhh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 
 [node name="Skeleton3D" parent="Player/Character/CharacterArmature" index="0"]
-bones/2/position = Vector3(0.0021529857, 0.67235816, 0.15489031)
-bones/4/rotation = Quaternion(0.09346444, 4.2901655e-07, 1.3560064e-07, 0.99562263)
-bones/7/rotation = Quaternion(-0.018631024, -0.00027542745, 5.118471e-06, 0.99982643)
-bones/9/rotation = Quaternion(-0.2441778, -0.036885273, -0.01015894, 0.9689755)
-bones/10/rotation = Quaternion(-0.55350345, -0.12097563, 0.17873295, 0.8043963)
-bones/12/rotation = Quaternion(-0.24533834, 0.037408836, 0.010063589, 0.9686633)
-bones/13/rotation = Quaternion(-0.5467957, 0.11948522, -0.17973259, 0.8089709)
-bones/14/position = Vector3(0.14652102, 0.14104721, 0.013203954)
-bones/14/rotation = Quaternion(-0.06408797, 0.076890655, -0.41022894, 0.90647274)
-bones/16/rotation = Quaternion(-0.045080002, 0.2638876, -0.34589878, 0.8992692)
-bones/18/position = Vector3(-0.14524426, 0.14104721, 0.013204127)
-bones/18/rotation = Quaternion(-0.06408772, -0.0768901, 0.41022906, 0.90647274)
-bones/20/rotation = Quaternion(-0.045080006, -0.26388767, 0.34589875, 0.8992693)
-bones/22/rotation = Quaternion(0.9622932, 0.018457018, 0.0027948716, 0.27137312)
-bones/23/rotation = Quaternion(0.4806779, 0.007053059, 0.017564345, 0.87669295)
-bones/24/rotation = Quaternion(0.9622933, -0.018456915, -0.0027941372, 0.27137282)
-bones/25/rotation = Quaternion(0.48067755, -0.0070529683, -0.017564178, 0.87669325)
+bones/2/position = Vector3(0.0021529857, 0.68007964, 0.15489031)
+bones/4/rotation = Quaternion(0.0865261, 4.3771803e-07, 3.8983792e-08, 0.9962497)
+bones/7/rotation = Quaternion(-0.0123792505, -0.00027545413, 3.4009217e-06, 0.9999234)
+bones/9/rotation = Quaternion(-0.20847523, -0.020838358, -0.01306948, 0.9777183)
+bones/10/rotation = Quaternion(-0.5182846, -0.113152035, 0.18378569, 0.82752687)
+bones/12/rotation = Quaternion(-0.21403691, 0.023330351, 0.012619327, 0.97646546)
+bones/13/rotation = Quaternion(-0.52730024, 0.115154386, -0.18253765, 0.8218113)
+bones/14/position = Vector3(0.14923045, 0.14103258, 0.012933399)
+bones/14/rotation = Quaternion(-0.06930436, 0.0885856, -0.41000244, 0.905123)
+bones/16/rotation = Quaternion(-0.04766841, 0.2641545, -0.35655743, 0.89488375)
+bones/18/position = Vector3(-0.14795369, 0.14103253, 0.012933579)
+bones/18/rotation = Quaternion(-0.06930409, -0.08858503, 0.41000247, 0.905123)
+bones/20/rotation = Quaternion(-0.047668435, -0.2641545, 0.35655755, 0.89488375)
+bones/22/rotation = Quaternion(0.9669075, 0.018805059, 0.002346779, 0.25442255)
+bones/23/rotation = Quaternion(0.45335305, 0.0065068416, 0.017773936, 0.89113003)
+bones/24/rotation = Quaternion(0.96690756, -0.018804943, -0.0023460465, 0.25442228)
+bones/25/rotation = Quaternion(0.45335245, -0.0065067546, -0.017773772, 0.8911304)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.85903513, -0.24889809, 0.4473345, 0.014719784, 0.8854913, 0.46442264, -0.5117047, -0.39237076, 0.76433194, 0, 26.699999, 18)
@@ -335,6 +338,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.97946, 21.68359, 1.152117
 
 [node name="Collectible2" parent="." instance=ExtResource("5_kry3j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.176504, 0.960094, -60.43538)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_kry3j")
 
 [editable path="Player"]
 [editable path="Player/Character"]
