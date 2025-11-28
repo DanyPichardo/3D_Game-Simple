@@ -3,7 +3,6 @@ extends CharacterBody3D
 @onready var cam = $CameraPivot
 @onready var animation_tree: AnimationTree = $Character/AnimationTree
 
-
 const SPEED := 5.5
 const JUMP_VELOCITY := 10.0
 var mouse_sens := 0.1
@@ -16,6 +15,7 @@ var curAnim = IDLE
 
 var run_val := 0.0
 var jump_val := 0.0
+
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -48,7 +48,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 			rotate_y(deg_to_rad(-event.relative.x * mouse_sens))
 			cam.rotate_x(deg_to_rad(-event.relative.y * mouse_sens))
-			cam.rotation.x = clamp(cam.rotation.x, deg_to_rad(-50), deg_to_rad(30))
+			cam.rotation.x = clamp(cam.rotation.x, deg_to_rad(-50), deg_to_rad(25))
 	elif event.is_action_pressed("ui_cancel"):
 		if mouse_visible == false:
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -74,9 +74,7 @@ func movimiento(delta:float) -> void:
 	var input_direction_2D = Input.get_vector(
 		"move_left", "move_right", "move_forward", "move_back"
 	)
-	var input_direction_3D = (transform.basis * Vector3(
-		input_direction_2D.x, 0.0, input_direction_2D.y
-	)).normalized()
+	var input_direction_3D = (transform.basis * Vector3(input_direction_2D.x, 0.0, input_direction_2D.y)).normalized()
 	if input_direction_3D:
 		velocity.x = input_direction_3D.x * SPEED
 		velocity.z = input_direction_3D.z * SPEED

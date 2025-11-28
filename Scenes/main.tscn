@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bd15fp7hqg003"]
+[gd_scene load_steps=6 format=3 uid="uid://bd15fp7hqg003"]
 
 [ext_resource type="Material" uid="uid://rvmh7fyxq51" path="res://Assets/Materials/platform.tres" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://7qlj7k80q6cl" path="res://Scenes/player.tscn" id="1_jjgbg"]
 [ext_resource type="Material" uid="uid://22gmew6071n7" path="res://Assets/Materials/brigde.tres" id="2_jjvhh"]
 [ext_resource type="Material" uid="uid://dauxjsmrstx20" path="res://Assets/Materials/ground.tres" id="3_jjvhh"]
-[ext_resource type="PackedScene" uid="uid://dkyexrc522rg2" path="res://Scenes/mob.tscn" id="5_kry3j"]
 
 [sub_resource type="Environment" id="Environment_jjgbg"]
 background_mode = 1
@@ -305,23 +304,23 @@ material = ExtResource("3_jjvhh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 
 [node name="Skeleton3D" parent="Player/Character/CharacterArmature" index="0"]
-bones/2/position = Vector3(0.0021529857, 0.6648094, 0.15489031)
-bones/4/rotation = Quaternion(0.10024568, 4.3847794e-07, 3.2963747e-08, 0.99496275)
-bones/7/rotation = Quaternion(-0.024744064, -0.00027539092, 6.7978867e-06, 0.9996939)
-bones/9/rotation = Quaternion(-0.19909257, -0.016640617, -0.013826363, 0.97974193)
-bones/10/rotation = Quaternion(-0.5042156, -0.11002771, 0.18567301, 0.83617353)
-bones/12/rotation = Quaternion(-0.2037616, 0.018728483, 0.013450175, 0.97874904)
-bones/13/rotation = Quaternion(-0.5125434, 0.11187697, -0.18456453, 0.83109504)
-bones/14/position = Vector3(0.14694437, 0.14104483, 0.013161686)
-bones/14/rotation = Quaternion(-0.06491988, 0.07875502, -0.4101973, 0.90626776)
-bones/16/rotation = Quaternion(-0.042540785, 0.26359084, -0.335421, 0.90343946)
-bones/18/position = Vector3(-0.14566755, 0.14104481, 0.013161861)
-bones/18/rotation = Quaternion(-0.06491963, -0.07875448, 0.4101974, 0.9062678)
-bones/20/rotation = Quaternion(-0.042540804, -0.26359087, 0.33542106, 0.90343946)
-bones/22/rotation = Quaternion(0.95773435, 0.018099254, 0.003223434, 0.28706634)
-bones/23/rotation = Quaternion(0.50583833, 0.0075582205, 0.017352955, 0.8624207)
-bones/24/rotation = Quaternion(0.9577344, -0.018099163, -0.0032226956, 0.28706604)
-bones/25/rotation = Quaternion(0.50583786, -0.0075581265, -0.0173528, 0.8624209)
+bones/2/position = Vector3(0.0021529857, 0.6517288, 0.15489031)
+bones/4/rotation = Quaternion(0.11198872, 4.39063e-07, 2.7799366e-08, 0.9937095)
+bones/7/rotation = Quaternion(-0.03533716, -0.00027530317, 9.708102e-06, 0.99937546)
+bones/9/rotation = Quaternion(-0.19262594, -0.013752153, -0.0143461, 0.9810711)
+bones/10/rotation = Quaternion(-0.4938958, -0.10773634, 0.1870119, 0.84231013)
+bones/12/rotation = Quaternion(-0.19647859, 0.01547254, 0.014036681, 0.98028564)
+bones/13/rotation = Quaternion(-0.5011818, 0.10935404, -0.18607047, 0.83799535)
+bones/14/position = Vector3(0.1448206, 0.14105627, 0.013373749)
+bones/14/rotation = Quaternion(-0.060848635, 0.06963374, -0.4103351, 0.9072341)
+bones/16/rotation = Quaternion(-0.038123406, 0.2629924, -0.3171425, 0.9103858)
+bones/18/position = Vector3(-0.14354381, 0.14105634, 0.0133739235)
+bones/18/rotation = Quaternion(-0.060848378, -0.0696332, 0.4103352, 0.90723413)
+bones/20/rotation = Quaternion(-0.03812344, -0.26299244, 0.31714255, 0.91038585)
+bones/22/rotation = Quaternion(0.9497153, 0.01743462, 0.0039542234, 0.3126039)
+bones/23/rotation = Quaternion(0.5459171, 0.008367565, 0.016977502, 0.8376253)
+bones/24/rotation = Quaternion(0.94971544, -0.017434549, -0.003953482, 0.31260365)
+bones/25/rotation = Quaternion(0.5459168, -0.008367467, -0.016977346, 0.83762556)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.85903513, -0.24889809, 0.4473345, 0.014719784, 0.8854913, 0.46442264, -0.5117047, -0.39237076, 0.76433194, 0, 26.699999, 18)
@@ -329,9 +328,6 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_jjgbg")
-
-[node name="Enemy" parent="." instance=ExtResource("5_kry3j")]
-transform = Transform3D(5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, 5.9604645e-08, -67.6, 7.5000005, 0.6000004)
 
 [editable path="Player"]
 [editable path="Player/Character"]
