@@ -82,6 +82,6 @@ func movimiento(delta:float) -> void:
 			curAnim = RUN
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.x, 0, SPEED)
+		velocity.z = move_toward(velocity.z, 0, SPEED)
 		if is_on_floor():
 			curAnim = IDLE
